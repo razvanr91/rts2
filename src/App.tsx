@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import EventComponent from "./events/EventComponents";
+
+import UserSearch from "./refs/UserSearch";
 
 function App() {
 	return (
 		<div className="App">
-			<EventComponent />
+			<UserSearch />
 		</div>
 	);
 }
