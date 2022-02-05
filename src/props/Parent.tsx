@@ -4,7 +4,7 @@ const Parent = () => {
 	return (
 		<div>
 			<Child color="blue" onClick={() => console.log("click")} />
-			<ChildAsFC color="red" />
+			<ChildAsFC color="red" onClick={() => console.log("click")} />
 		</div>
 	);
 };
