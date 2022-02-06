@@ -32,6 +32,7 @@ const UserSearch: React.FC = () => {
 			<div>
 				{user && (
 					<div>
+						<h2>Found user</h2>
 						<h2>User name: {user.name}</h2>
 						<h2>User age : {user.age}</h2>
 					</div>
