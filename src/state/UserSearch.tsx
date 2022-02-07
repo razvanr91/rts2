@@ -8,6 +8,7 @@ const users = [
 
 const UserSearch: React.FC = () => {
 	const [name, setName] = useState("");
+	const [user, setUser] = useState<{ name: string; age: number } | undefined>();
 
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setName(e.target.value);
@@ -17,7 +18,7 @@ const UserSearch: React.FC = () => {
 		const foundUser = users.find((user) => {
 			return user.name.toLowerCase().includes(name.toLowerCase());
 		});
-		console.log(foundUser);
+		setUser(foundUser);
 	};
 
 	return (
@@ -25,6 +26,13 @@ const UserSearch: React.FC = () => {
 			<h2>User Search</h2>
 			<input value={name} onChange={onChange} />
 			<button onClick={onClick}>Search</button>
+			{user && (
+				<div>
+					<h4>
+						{user.name} - {user.age}
+					</h4>
+				</div>
+			)}
 		</div>
 	);
 };
