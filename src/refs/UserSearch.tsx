@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const users = [
 	{ name: "Sarah", age: 20 },
@@ -10,6 +10,10 @@ const UserSearch: React.FC = () => {
 	const inputRef = useRef<HTMLInputElement | null>(null);
 	const [name, setName] = useState("");
 	const [user, setUser] = useState<{ name: string; age: number } | undefined>();
+
+	useEffect(() => {
+		inputRef.current?.focus();
+	}, []);
 
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setName(e.target.value);
